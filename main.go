@@ -12,7 +12,8 @@ func main() {
 	consumerSecret := flag.String("consumerSecret", "", "Twitter provided consumer Secret")
 	tokenKey := flag.String("tokenKey", "", "Twitter provided token key")
 	tokenSecret := flag.String("tokenSecret", "", "Twitter provided token secret")
-	screenName := flag.String("screenName", "", "Twitter provided token secret")
+	screenName := flag.String("screenName", "", "Your twitter account name")
+	flag.Parse()
 
 	config := oauth1.NewConfig(*consumerKey, *consumerSecret)
 	token := oauth1.NewToken(*tokenKey, *tokenSecret)
