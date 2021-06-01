@@ -1,6 +1,6 @@
 # Clean Tweets
 
-Do you wanna remove all your tweets? Just use it.
+Do you want to remove all your tweets and likes? Just use it.
 
 ## How to use it?
 
