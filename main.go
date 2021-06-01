@@ -19,10 +19,10 @@ Usage:
   trm -h | --help
 
 Options:
-  --consumer-key=<ck> -k <ck>     Twitter provided consumer key.
-  --consumer-secret=<cs> -s <cs>  Twitter provided consumer Secret.
-  --token-key=<tk> -y <tk>        Twitter provided token key.
-  --token-secret=<ts> -t <ts>     Twitter provided token secret.
+  --consumer-key=<ck>,-k <ck>     Twitter provided consumer key.
+  --consumer-secret=<cs>,-s <cs>  Twitter provided consumer Secret.
+  --token-key=<tk>,-y <tk>        Twitter provided token key.
+  --token-secret=<ts>,-t <ts>     Twitter provided token secret.
   --help -h                       Print help.`
 
 	doc, err := docopt.ParseDoc(usage)
