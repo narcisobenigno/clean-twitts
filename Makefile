@@ -1,5 +1,6 @@
 BIN=./bin
-LIST=$(BIN)/trm
+PROG=trm
+LIST=$(addprefix $(BIN)/, $(PROG))
 
 build: $(LIST)
 
