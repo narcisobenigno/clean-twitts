@@ -83,16 +83,12 @@ Options:
 	}
 	if all {
 		deleteTweets(client, user)
+		newLine()
 		deleteLikes(client, user)
 	}
 }
 
 func deleteTweets(client *twitter.Client, user *twitter.User) {
-	_, err := os.Stdout.WriteString(fmt.Sprintln(""))
-	if err != nil {
-		panic(err)
-	}
-
 	count := 0
 	for ok := true; ok; {
 		tweets, _, _ := client.Timelines.UserTimeline(&twitter.UserTimelineParams{
@@ -124,11 +120,6 @@ func deleteTweets(client *twitter.Client, user *twitter.User) {
 }
 
 func deleteLikes(client *twitter.Client, user *twitter.User) {
-	_, err := os.Stdout.WriteString(fmt.Sprintln(""))
-	if err != nil {
-		panic(err)
-	}
-
 	count := 0
 	for ok := true; ok; {
 		likes, _, err := client.Favorites.List(&twitter.FavoriteListParams{
@@ -161,7 +152,7 @@ func deleteLikes(client *twitter.Client, user *twitter.User) {
 		}
 	}
 
-	_, err = os.Stdout.WriteString(fmt.Sprintf("\nTotal deleted %d likes", count))
+	_, err := os.Stdout.WriteString(fmt.Sprintf("\nTotal deleted %d likes", count))
 	if err != nil {
 		panic(err)
 	}
@@ -173,4 +164,11 @@ func parsingError(err error) {
 		panic(err)
 	}
 	os.Exit(2)
+}
+
+func newLine() {
+	_, err := os.Stdout.WriteString(fmt.Sprintln(""))
+	if err != nil {
+		panic(err)
+	}
 }
